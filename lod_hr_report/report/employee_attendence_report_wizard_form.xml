@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_for_employee_Landscape" model="report.paperformat">
+            <field name="name">A4 Landscape Employee</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">8</field>
+            <field name="margin_bottom">2</field>
+            <field name="margin_left">2</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+        <record id="action_report_attendence_report_wizard" model="ir.actions.report">
+            <field name="name">Employee Report</field>
+            <field name="model">employee.attendence.report.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="paperformat_id" ref="lod_hr_report.paperformat_for_employee_Landscape" />
+            <field name="report_name">lod_hr_report.report_one_set</field>
+            <field name="report_file">lod_hr_report.report_one_set</field>
+            <field name="binding_model_id" ref="model_employee_attendence_report_wizard"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

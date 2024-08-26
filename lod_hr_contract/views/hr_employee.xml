@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='active_group']" position="inside">
+                <field name="employee_id" placeholder="Employee ID"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_filter_search_custom" model="ir.ui.view">
+        <field name="name">hr.view_employee_filter.search.inherit.custom</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter" position="inside">
+                <filter 
+                    string="Employee ID" 
+                    name="employee_id"
+                    domain="[('employee_id', '!=', False)]"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="employee_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

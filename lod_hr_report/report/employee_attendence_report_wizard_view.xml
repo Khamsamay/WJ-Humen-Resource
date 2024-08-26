@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="report_one_set">
+		<t t-call="web.html_container">
+			<t t-call="web.basic_layout">
+				<!-- <t t-foreach="emp_name" t-as="t"> -->
+					<div class="page">
+						<div class="oe_structure">
+							<h1 align="center">Employee Details</h1>
+						</div>
+						<br/>
+						<div class="row col-12" style="width: 100%; display: flex; align-items: center;">
+                            <div style="width: 40%; font-family: Saysettha OT, sahadeva; color: #15130F; font-size: 18px;">
+                            </div>
+                            <div style="width: 60%; font-family: Saysettha OT, sahadeva; color: #15130F; font-size: 20px;">
+                                From: <span t-esc="form_data['starting_date']" t-options='{"widget": "date", "format": "dd-MM-yyyy"}'/>
+                                To: <span t-esc="form_data['ending_date']" t-options='{"widget": "date", "format": "dd-MM-yyyy"}'/>
+                            </div>
+                        </div>
+						<br/>
+							<table class="table table-bordered mt32">
+								<thead>
+									
+										<tr>
+											<table class="table table-bordered mt32">
+												<thead>
+													<tr>
+													<th class="text-left">
+															<span>No.</span>
+														</th>
+														<th class="text-left">
+															<span>Employee ID - HR will assign manually</span>
+														</th>
+														<th class="text-left">
+															<span>Govem ment ID</span>
+														</th>
+														<th class="text-left">
+															<span>Annual Leave Balance - 20 August</span>
+														</th>
+														<th class="text-left">
+															<span>Annual Leave Type</span>
+														</th>
+														<th name="th_employee_name_id" class="text-left">
+															<span>Employee Name</span>
+														</th>
+														<th class="text-left">
+															<span>Basic Salary (RMB)</span>
+														</th>
+														<th class="text-left">
+															<span>Allowances &amp; Benefits</span>
+														</th>
+														<th class="text-left">
+															<span>Gender</span>
+														</th>
+														<th class="text-left">
+															<span>Department</span>
+														</th>
+														<th class="text-left">
+															<span>Location</span>
+														</th>
+														<th class="text-left">
+															<span>Job Position</span>
+														</th>
+														<th class="text-left">
+															<span>Manager</span>
+														</th>
+														<th class="text-left">
+															<span>Nationality</span>
+														</th>
+														<th class="text-left">
+															<span>Start Date</span>
+														</th>
+														<th class="text-left">
+															<span>Work Permit Expiiration Date</span>
+														</th>
+														<th class="text-left">
+															<span>Last Salary Increment Date</span>
+														</th>
+														<th class="text-left">
+															<span>Shift Table</span>
+														</th>
+														<th class="text-left">
+															<span>Allowance/Benefits</span>
+														</th>
+													</tr>
+													
+												</thead>
+												<tbody>
+													
+												 	<t t-set="i" t-value="1"/>
+													<t t-foreach="emp_name" t-as="t">
+													
+														<tr>
+															<td style="text-align: center;">
+																 <t t-esc="i"/>
+															</td>
+															<td style="text-align: center;"> </td>
+															<td>
+
+															</td>
+															<td>
+
+															</td>
+															
+															<td>
+
+															</td>
+															<td>
+																<span t-esc="t['emp_name']"/>
+															</td>
+															<td>
+
+															</td>
+															<td></td>
+															<td style="text-align: center;"><t t-esc="t['gender']"/></td>
+															<td style="text-align: center;"><t t-esc="t['department']"/></td>
+															<td>
+
+															</td>
+															<td style="text-align: center;"><t t-esc="t['job']"/></td>
+															<td style="text-align: center;"><t t-esc="t['manager']"/></td>
+															<td>
+
+															</td>
+															<td>
+
+															</td>
+															<td>
+
+															</td>
+															<td>
+
+															</td>
+															<td>
+
+															</td>
+															<td>
+
+															</td>
+															<t t-set="i" t-value="i + 1"/>
+														</tr>
+													</t>
+												</tbody>
+											</table>
+										</tr>
+									
+								</thead>
+							</table>
+							<div style="page-break-after: always;">
+								<br/>
+	                    	</div>
+					</div>
+				<!-- </t> -->
+			</t>
+		</t>
+	</template>
+</odoo>
