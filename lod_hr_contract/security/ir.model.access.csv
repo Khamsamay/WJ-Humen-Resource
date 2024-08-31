@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_report_expire_probation_date_wizard,access_report.expire.probation.date.wizard,model_report_expire_probation_date_wizard,,1,1,1,1
 access_hr_payroll_increased,access.hr.payroll.increased,model_hr_payroll_increased,,1,1,1,1
 access_hr_payroll_allowance,access.hr.payroll.allowance,model_hr_payroll_allowance,,1,1,1,1
+access_hr_payroll_advance_commission,access.hr.payroll.advance.commission,model_hr_payroll_advance_commission,,1,1,1,1
+access_hr_payroll_advance_commission_line,access.hr.payroll.advance.commission.line,model_hr_payroll_advance_commission_line,,1,1,1,1

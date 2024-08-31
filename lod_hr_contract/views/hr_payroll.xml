@@ -38,7 +38,7 @@
         <field name="name">hr.payroll.increased.view.tree</field>
         <field name="model">hr.payroll.increased</field>
         <field name="arch" type="xml">
-            <tree string="Payrool Increase">
+            <tree string="Payroll Increase">
                 <field name="name" />
                 <field name="country_id" />
                 <field name="increased_daily" />
@@ -51,7 +51,7 @@
         <field name="name">hr.payroll.increased.view.form</field>
         <field name="model">hr.payroll.increased</field>
         <field name="arch" type="xml">
-            <form string="Payroll Increase">
+            <form string="Payroll Advance-Commission">
                 <sheet>
                     <group>
                         <field name="name" />
@@ -68,6 +68,91 @@
         <field name="name">Payroll Increase</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.payroll.increased</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="hr_payroll_advance_commission_view_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.advance.commission.view.tree</field>
+        <field name="model">hr.payroll.advance.commission</field>
+        <field name="arch" type="xml">
+            <tree string="Payroll Advance-Commission">
+                <field name="name" />
+                <field name="date_start" />
+                <field name="date_end" />
+                <field name="adv_comm_line_ids" />
+            </tree>
+        </field>
+    </record>
+    <record id="hr_payroll_advance_commission_view_form" model="ir.ui.view">
+        <field name="name">hr.payroll.advance.commission.view.form</field>
+        <field name="model">hr.payroll.advance.commission</field>
+        <field name="arch" type="xml">
+            <form string="Payroll Advance-Commission">
+                <sheet>
+                    <group>
+                        <field name="name" placeholder="ADV-COMM Monthly 01/08/2024 - 31/08/2024"/>
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </group>
+                    <notebook>
+                        <page name="adv_comm_line_ids" string="Advance-Commission Line">
+                            <field name="adv_comm_line_ids">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="adv_amount" />
+                                    <field name="comm_amount" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hr_payroll_advance_commission_action" model="ir.actions.act_window">
+        <field name="name">Payroll Advance-Commission</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.payroll.advance.commission</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="hr_payroll_advance_commission_view_line_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.advance.commission.line.view.tree</field>
+        <field name="model">hr.payroll.advance.commission.line</field>
+        <field name="arch" type="xml">
+            <tree string="Payroll Advance-Commission Line">
+                <field name="adv_comm_id" />
+                <field name="name" />
+                <field name="adv_amount" />
+                <field name="comm_amount" />
+                <field name="date_start" />
+                <field name="date_end" />
+            </tree>
+        </field>
+    </record>
+    <record id="hr_payroll_advance_commission_view_line_form" model="ir.ui.view">
+        <field name="name">hr.payroll.advance.commission.line.view.form</field>
+        <field name="model">hr.payroll.advance.commission.line</field>
+        <field name="arch" type="xml">
+            <form string="Payroll Advance-Commission Line">
+                <sheet>
+                    <group>
+                        <field name="adv_comm_id" />
+                        <field name="employee_id" />
+                        <field name="name" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                        <field name="adv_amount" />
+                        <field name="comm_amount" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hr_payroll_advance_commission_line_action" model="ir.actions.act_window">
+        <field name="name">Payroll Advance-Commission Line</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.payroll.advance.commission.line</field>
         <field name="view_mode">tree,form</field>
     </record>
 </odoo>

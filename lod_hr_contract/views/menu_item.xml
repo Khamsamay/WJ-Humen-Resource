@@ -22,4 +22,17 @@
         parent="hr.menu_config_employee"
         sequence="110"/>
 
+    <menuitem id="model_name_menu" name="AdvanceCommission" sequence="100" parent="hr_payroll.menu_hr_payroll_payslips">
+        <menuitem
+            id="hr_advance_commission_menu"
+            name="Batch Advance-Commission"
+            action="hr_payroll_advance_commission_action"
+            sequence="10"/>
+        <menuitem
+            id="hr_advance_commission_line_menu"
+            name="Advance-Commission Line"
+            action="hr_payroll_advance_commission_line_action"
+            sequence="20"/>
+    </menuitem>
+
 </odoo>
