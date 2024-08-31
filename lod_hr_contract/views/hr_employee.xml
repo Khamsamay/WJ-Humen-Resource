@@ -7,6 +7,24 @@
         <field name="arch" type="xml">
             <xpath expr="//group[@name='active_group']" position="inside">
                 <field name="employee_id" placeholder="Employee ID"/>
+                <field name="allowance_id"/>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page string="Detail Salary">
+                    <group>
+                        <group name="allowance" string="Allowance">
+                            <field name="allowance_id" />
+                            <field name="rest_day" />
+                            <field name="remain_rest_day" />
+                            <field name="allowance_amount" />
+                        </group>
+                        <group name="increasement" string="Increasement">
+                            <field name="increased_id" />
+                            <field name="increased_amount" />
+                            <field name="limit_amount" />
+                        </group>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
@@ -23,7 +41,7 @@
                     domain="[('employee_id', '!=', False)]"/>
             </xpath>
             <xpath expr="//field[@name='name']" position="before">
-                <field name="employee_id"/>
+                <field name="employee_id" string="Search Employee" filter_domain="['|','|','|','|', ('employee_id', 'ilike', self),('work_email', 'ilike', self), ('name', 'ilike', self), ('pin', 'ilike', self), ('barcode', 'ilike', self)]"/>
             </xpath>
         </field>
     </record>

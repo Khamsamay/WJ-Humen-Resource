@@ -11,10 +11,13 @@
     "license": "AGPL-3",
     "installable": True,
     "summary": "Employee's contract",
-    "depends": ["hr_contract","hr_payroll","base"],
+    "depends": ["hr","hr_contract","hr_payroll","base"],
     "data": [
         "views/hr_contract.xml",
-        # "views/hr_payroll.xml",
+        "security/ir.model.access.csv",
         "views/hr_employee.xml",
-             ],
+        "views/hr_payroll.xml",
+        "wizard/wizard_expire_probation_date_view.xml",
+        "views/menu_item.xml",
+        ],
 }

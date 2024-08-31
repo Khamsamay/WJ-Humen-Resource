@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="hr_report_expire_probation_date_menu"
+        name="Report Expiration and Probation Date"
+        action="action_expire_probation_date_report_wizard"
+        parent="hr.hr_menu_hr_reports"
+        sequence="100"/>
+
+    <menuitem
+        id="hr_allowance_menu"
+        name="Payroll Allowance"
+        action="hr_payroll_allowance_action"
+        parent="hr.menu_config_employee"
+        sequence="100"/>
+
+    <menuitem
+        id="hr_payroll_increase_menu"
+        name="Payroll Increasement"
+        action="hr_payroll_increased_action"
+        parent="hr.menu_config_employee"
+        sequence="110"/>
+
+</odoo>

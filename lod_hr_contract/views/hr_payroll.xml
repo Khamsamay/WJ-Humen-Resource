@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_payroll_allowance_view_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.allowance.view.tree</field>
+        <field name="model">hr.payroll.allowance</field>
+        <field name="arch" type="xml">
+            <tree string="Allowance">
+                <field name="name" />
+                <field name="rest_day_of_month" />
+                <field name="amount" />
+            </tree>
+        </field>
+    </record>
+    <record id="hr_payroll_allowance_view_form" model="ir.ui.view">
+        <field name="name">hr.payroll.allowance.view.form</field>
+        <field name="model">hr.payroll.allowance</field>
+        <field name="arch" type="xml">
+            <form string="Allowance">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="rest_day_of_month" />
+                        <field name="amount" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hr_payroll_allowance_action" model="ir.actions.act_window">
+        <field name="name">Allowance</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.payroll.allowance</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="hr_payroll_increased_view_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.increased.view.tree</field>
+        <field name="model">hr.payroll.increased</field>
+        <field name="arch" type="xml">
+            <tree string="Payrool Increase">
+                <field name="name" />
+                <field name="country_id" />
+                <field name="increased_daily" />
+                <field name="increased_amount" />
+                <field name="limit_amount" />
+            </tree>
+        </field>
+    </record>
+    <record id="hr_payroll_increased_view_form" model="ir.ui.view">
+        <field name="name">hr.payroll.increased.view.form</field>
+        <field name="model">hr.payroll.increased</field>
+        <field name="arch" type="xml">
+            <form string="Payroll Increase">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="country_id" />
+                        <field name="increased_daily" />
+                        <field name="increased_amount" />
+                        <field name="limit_amount" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hr_payroll_increased_action" model="ir.actions.act_window">
+        <field name="name">Payroll Increase</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.payroll.increased</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
