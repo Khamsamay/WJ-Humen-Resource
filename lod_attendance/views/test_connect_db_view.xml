@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="lod_connection_db_fingerprint_view_tree" model="ir.ui.view">
+        <field name="name">lod.connection.db.fingerprint.view.tree</field>
+        <field name="model">lod.connection.db.fingerprint</field>
+        <field name="arch" type="xml">
+            <tree string="Test Connection">
+                <field name="name" />
+                <field name="db_name" />
+                <field name="active" />
+                <button string="Test Connect DB" name="test_connect" type="object" class="oe_highlight"/>
+            </tree>
+        </field>
+    </record>
+    <record id="lod_connection_db_fingerprint_view_form" model="ir.ui.view">
+        <field name="name">lod.connection.db.fingerprint.view.form</field>
+        <field name="model">lod.connection.db.fingerprint</field>
+        <field name="arch" type="xml">
+            <form string="Test Connection">
+                <sheet>
+                <header>
+                    <button string="Test Connect DB" name="test_connect" type="object" class="oe_highlight"/>
+                </header>
+                    <group>
+                        <group string="Detail">
+                            <field name="name" />
+                            <field name="db_location" />
+                            <field name="active" />
+                            <field name="db_name"/>
+                        </group>
+                        <group string="Connection" invisible="db_location != 'external'">
+                            <field name="db_user"/>
+                            <field name="db_pass"/>
+                            <field name="db_host"/>
+                            <field name="db_port"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="lod_connection_db_fingerprint_action" model="ir.actions.act_window">
+        <field name="name">Test Connection</field>
+        <field name="res_model">lod.connection.db.fingerprint</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_area,access.employee.area,model_employee_area,,1,1,1,1
+access_lod_connection_db_fingerprint,access.lod.connection.db.fingerprint,model_lod_connection_db_fingerprint,,1,1,1,1
+access_lod_biometric_device,access.lod.biometric.device,model_lod_biometric_device,,1,1,1,1
+access_lod_attendance_log,access.lod.attendance.log,model_lod_attendance_log,,1,0,1,1

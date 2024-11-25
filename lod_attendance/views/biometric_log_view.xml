@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="lod_attendance_log_view_tree" model="ir.ui.view">
+        <field name="name">lod.attendance.log.view.tree</field>
+        <field name="model">lod.attendance.log</field>
+        <field name="arch" type="xml">
+            <tree string="Attendance Log">
+                <field name="employee_id" />
+                <field name="log_id" />
+                <field name="punching_time" />
+                <field name="punch_state" />
+                <field name="is_calculated" />
+                <field name="area_name" />
+                <field name="device" />
+            </tree>
+        </field>
+    </record>
+    <record id="lod_attendance_log_view_form" model="ir.ui.view">
+        <field name="name">lod.attendance.log.view.form</field>
+        <field name="model">lod.attendance.log</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Log">
+                <!-- <header>
+                    <button name="action_download_attendance" type="object"
+                            string="Download Attendance" class="oe_highlight"/>
+                </header> -->
+                <sheet>
+                    <group>
+                        <field name="log_id" readonly="1"/>
+                        <field name="employee_id" />
+                        <field name="punching_time" />
+                        <field name="punch_state" />
+                        <field name="is_calculated" />
+                        <field name="area_name" />
+                        <field name="device" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lod_attendance_log" model="ir.actions.act_window">
+        <field name="name">Attendance Log</field>
+        <field name="res_model">lod.attendance.log</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

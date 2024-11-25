@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="lod_biometric_device_view_tree" model="ir.ui.view">
+        <field name="name">lod.biometric.device.view.tree</field>
+        <field name="model">lod.biometric.device</field>
+        <field name="arch" type="xml">
+            <tree string="Biometric Device">
+                <field name="name" />
+                <field name="serial_number" />
+                <field name="device_ip" />
+                <field name="real_ip" />
+                <field name="port" />
+                <field name="time_zone" />
+                <field name="transaction_count" />
+                <field name="user_count" />
+                <field name="fp_count" />
+                <field name="area_id" />
+                <!-- <field name="company_id" /> -->
+            </tree>
+        </field>
+    </record>
+    <record id="lod_biometric_device_view_form" model="ir.ui.view">
+        <field name="name">lod.biometric.device.view.form</field>
+        <field name="model">lod.biometric.device</field>
+        <field name="arch" type="xml">
+            <form string="Biometric Device">
+                <header>
+                    <button name="action_download_attendance" type="object"
+                            string="Download Attendance" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <!-- <div class="oe_button_box" name="button_box">
+                        <button name="action_view_data_log_device" type="object"
+                            class="oe_stat_button" icon="fa-history"
+                            invisible="protocol != 'icloud'"
+                            help="The list of attendance device log data.">
+                            <field name="data_log_count" widget="statinfo"
+                                string="Data Log" />
+                        </button>
+                    </div> -->
+                    <group>
+                        <field name="name" />
+                        <field name="serial_number" />
+                        <field name="device_ip" />
+                        <field name="real_ip" />
+                        <field name="port" />
+                        <field name="time_zone" />
+                        <field name="transaction_count" />
+                        <field name="user_count" />
+                        <field name="fp_count" />
+                        <field name="area_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_server_biometric_device" model="ir.actions.server" >
+        <field name="name">Biometric Device</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_lod_biometric_device" />
+        <field name="state">code</field>
+        <field name="code">action = model.action_select_boimetric_device()</field>
+    </record>
+</odoo>

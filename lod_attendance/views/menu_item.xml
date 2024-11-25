@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="fingerprint_menu" parent="hr_attendance.menu_hr_attendance_root" name="Fingerprint" sequence="50">
+        <menuitem id="biomatric_log_menu" action="action_lod_attendance_log" sequence="10"/>
+        <menuitem id="employee_area_menu" action="employee_area_action" sequence="20"/>
+        <menuitem id="connection_db_fingerprint_menu" action="lod_connection_db_fingerprint_action" sequence="30"/>
+        <menuitem id="biomatric_device_menu" action="action_server_biometric_device" sequence="40"/>
+    </menuitem>
+</odoo>
